@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="SmartVote - Modern Online Voting Management System">
+
+    <title>SmartVote | Smart Election Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <i class="fa-solid fa-check-to-slot"></i>
+            </div>
+
+            <div class="brand-name">
+                Smart<span>Vote</span>
+                <small>ELECTION PLATFORM</small>
+            </div>
+
+            <button class="close-sidebar" id="closeSidebar"
+                    aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-label">MAIN MENU</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#dashboard" class="nav-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#elections" class="nav-link">
+                <i class="fa-solid fa-landmark"></i>
+                <span>Elections</span>
+            </a>
+
+            <a href="#candidates" class="nav-link">
+                <i class="fa-solid fa-users"></i>
+                <span>Candidates</span>
+            </a>
+
+            <a href="#results" class="nav-link">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Election Results</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-label">ACCOUNT</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="login.html" class="nav-link">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span>Login</span>
+            </a>
+
+            <a href="register.html" class="nav-link">
+                <i class="fa-solid fa-user-plus"></i>
+                <span>Register</span>
+            </a>
+
+            <a href="#about" class="nav-link">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About SmartVote</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="security-card">
+
+                <div class="security-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <strong>SmartVote Demo</strong>
+                    <small>Educational project</small>
+                </div>
+
+                <span class="online-dot"></span>
+
+            </div>
+
+            <div class="sidebar-version">
+                SMARTVOTE VERSION 1.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="icon-btn menu-toggle" id="menuToggle"
+                        aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="page-heading">
+                    <h2>Dashboard Overview</h2>
+                    <p>Welcome to your SmartVote workspace</p>
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="date-display">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+
+                <button class="icon-btn theme-toggle" id="themeToggle"
+                        aria-label="Change theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <div class="top-profile">
+
+                    <div class="avatar">SV</div>
+
+                    <div class="profile-details">
+                        <strong>Guest User</strong>
+                        <small>Public Visitor</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content" id="dashboard">
+
+
+            <!-- HERO SECTION -->
+            <section class="hero-section">
+
+                <div class="hero-content">
+
+                    <span class="hero-tag">
+                        <i class="fa-solid fa-sparkles"></i>
+                        SMART ELECTION MANAGEMENT
+                    </span>
+
+                    <h1>
+                        Your Voice.<br>
+                        <span>Your Vote. Your Future.</span>
+                    </h1>
+
+                    <p>
+                        Experience a modern voting platform designed
+                        to organize elections, manage candidates and
+                        simplify the voting process.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="register.html" class="btn-primary">
+                            Get Started
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="#about" class="btn-secondary">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="visual-circle circle-one"></div>
+                    <div class="visual-circle circle-two"></div>
+
+                    <div class="vote-illustration">
+
+                        <div class="illustration-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <div class="illustration-line"></div>
+                        <div class="illustration-line short"></div>
+
+                        <div class="illustration-footer">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Voting Demo
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card floating-top">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Easy to use</span>
+                    </div>
+
+                    <div class="floating-card floating-bottom">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Election Analytics</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+                        <div class="stat-icon icon-purple">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="stat-label">VOTERS</span>
+                    </div>
+
+                    <h2 id="totalVoters">0</h2>
+                    <p>Registered voters</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+                        <div class="stat-icon icon-blue">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <span class="stat-label">CANDIDATES</span>
+                    </div>
+
+                    <h2 id="totalCandidates">0</h2>
+                    <p>Available candidates</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+                        <div class="stat-icon icon-orange">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <span class="stat-label">ELECTIONS</span>
+                    </div>
+
+                    <h2 id="totalElections">0</h2>
+                    <p>Created elections</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+                        <div class="stat-icon icon-green">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+                        <span class="stat-label">TOTAL VOTES</span>
+                    </div>
+
+                    <h2 id="totalVotes">0</h2>
+                    <p>Recorded demo votes</p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ELECTION SECTION -->
+            <section class="section-block" id="elections">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Election Management</h2>
+                        <p>Explore election information and schedules.</p>
+                    </div>
+
+                    <a href="login.html" class="view-all">
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="election-card">
+
+                    <div class="election-symbol">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div class="election-info">
+
+                        <span class="status-tag">
+                            DEMO PROJECT
+                        </span>
+
+                        <h3>Student Council Election</h3>
+
+                        <p>
+                            Demonstration election for the SmartVote
+                            online voting platform.
+                        </p>
+
+                        <div class="election-meta">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Schedule pending
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-users"></i>
+                                Candidates pending
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a href="login.html" class="btn-outline">
+                        Explore Election
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- CANDIDATES AND RESULTS -->
+            <section class="bottom-grid">
+
+                <div class="content-panel" id="candidates">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Featured Candidates</h3>
+                            <p>Candidate information and profiles</p>
+                        </div>
+
+                        <i class="fa-solid fa-users panel-icon"></i>
+
+                    </div>
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+
+                        <h4>No Candidates Available</h4>
+
+                        <p>
+                            Candidate profiles will appear
+                            after the admin adds them.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-panel" id="results">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Election Results</h3>
+                            <p>Election performance overview</p>
+                        </div>
+
+                        <i class="fa-solid fa-chart-column panel-icon"></i>
+
+                    </div>
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+
+                        <h4>No Published Results</h4>
+
+                        <p>
+                            Results will appear after an election
+                            is completed and published.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ABOUT SECTION -->
+            <section class="about-panel" id="about">
+
+                <div class="about-logo">
+                    <i class="fa-solid fa-check-to-slot"></i>
+                </div>
+
+                <div>
+                    <h2>About SmartVote</h2>
+
+                    <p>
+                        SmartVote is a modern frontend demonstration
+                        project developed using HTML, CSS and JavaScript.
+                        It showcases voter registration, election
+                        management, candidate management and voting
+                        workflows.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <p>
+                    © 2026 <strong>SmartVote</strong>.
+                    Educational demonstration project.
+                </p>
+
+                <span>
+                    Designed for a smarter voting experience.
+                </span>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

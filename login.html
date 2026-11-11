@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | SmartVote</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <section class="auth-brand-panel">
+
+        <div class="auth-brand">
+
+            <div class="auth-brand-icon">
+                <i class="fa-solid fa-check-to-slot"></i>
+            </div>
+
+            <div class="auth-brand-name">
+                Smart<span>Vote</span>
+            </div>
+
+        </div>
+
+
+        <div class="auth-brand-content">
+
+            <span class="tagline">WELCOME BACK</span>
+
+            <h1>
+                Every Vote Counts.
+                <span>Every Voice Matters.</span>
+            </h1>
+
+            <p>
+                Sign in to explore your election dashboard,
+                manage your profile and access the SmartVote
+                demonstration platform.
+            </p>
+
+            <div class="auth-benefits">
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Personalized dashboard
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Easy election navigation
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Simple account management
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="auth-brand-footer">
+            © 2026 SmartVote | Educational Demo
+        </div>
+
+    </section>
+
+
+    <section class="auth-form-panel">
+
+        <div class="auth-form-container">
+
+            <a href="index.html" class="auth-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Homepage
+            </a>
+
+
+            <div class="auth-form-header">
+
+                <h2>Welcome Back!</h2>
+
+                <p>
+                    Enter your credentials to access SmartVote.
+                </p>
+
+            </div>
+
+
+            <div id="authMessage" class="auth-message"></div>
+
+
+            <form id="loginForm" class="auth-form">
+
+
+                <div class="form-group">
+
+                    <label for="loginRole">Login As</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                        <select id="loginRole"
+                                class="form-control"
+                                required>
+
+                            <option value="voter">Voter</option>
+
+                            <option value="admin">Administrator</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="loginEmail">Email Address</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input type="email"
+                               id="loginEmail"
+                               class="form-control"
+                               placeholder="Enter your email"
+                               autocomplete="username"
+                               required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="loginPassword">Password</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input type="password"
+                               id="loginPassword"
+                               class="form-control"
+                               placeholder="Enter your password"
+                               autocomplete="current-password"
+                               required>
+
+                        <button type="button"
+                                class="password-toggle"
+                                data-toggle="loginPassword"
+                                aria-label="Show password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-options">
+
+                    <label class="remember-option">
+
+                        <input type="checkbox" id="rememberMe">
+
+                        Remember email
+
+                    </label>
+
+                    <a href="register.html" class="auth-link">
+                        Create Account
+                    </a>
+
+                </div>
+
+
+                <button type="submit" class="auth-submit">
+                    Sign In
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+
+            <div class="demo-credentials">
+
+                <strong>
+                    <i class="fa-solid fa-circle-info"></i>
+                    Demo Administrator Credentials
+                </strong>
+
+                Email: admin@smartvote.com<br>
+
+                Password: Admin@123
+
+            </div>
+
+
+            <div class="auth-switch">
+
+                Don't have an account?
+
+                <a href="register.html">Register Now</a>
+
+            </div>
+
+
+            <div class="auth-terms">
+
+                Demo authentication only.
+                Do not use real passwords or personal information.
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="auth.js"></script>
+
+</body>
+</html>

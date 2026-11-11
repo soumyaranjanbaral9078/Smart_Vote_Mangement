@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voter Dashboard | SmartVote</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="voter.css">
+    <link rel="stylesheet" href="elections.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="voter-page">
+
+    <!-- SIDEBAR -->
+    <aside class="voter-sidebar" id="voterSidebar">
+
+        <a href="index.html" class="voter-brand">
+            <span class="voter-brand-icon">
+                <i class="fa-solid fa-check-to-slot"></i>
+            </span>
+            <span>Smart<span>Vote</span></span>
+        </a>
+
+        <div class="voter-profile-small">
+            <div class="voter-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="voter-sidebar-details">
+                <strong id="sidebarVoterName">Voter</strong>
+                <small>Registered Voter</small>
+            </div>
+        </div>
+
+        <p class="voter-menu-heading">VOTER MENU</p>
+
+        <nav class="voter-nav">
+
+            <a href="#overview" class="active" data-section="overview">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="#elections" data-section="elections">
+                <i class="fa-solid fa-landmark"></i>
+                Available Elections
+            </a>
+
+            <a href="#history" data-section="history">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Voting History
+            </a>
+
+            <a href="#profile" data-section="profile">
+                <i class="fa-solid fa-user"></i>
+                My Profile
+            </a>
+
+        </nav>
+
+        <div class="voter-sidebar-bottom">
+
+            <a href="index.html">
+                <i class="fa-solid fa-globe"></i>
+                Visit Website
+            </a>
+
+            <button type="button" id="voterLogout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="voter-main">
+
+        <!-- TOPBAR -->
+        <header class="voter-topbar">
+
+            <div class="voter-topbar-left">
+
+                <button type="button" class="voter-menu-toggle"
+                        id="voterMenuToggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h2 id="pageHeading">Voter Dashboard</h2>
+                    <p>Your personal voting account</p>
+                </div>
+
+            </div>
+
+            <div class="voter-topbar-right">
+
+                <span id="voterCurrentDate"></span>
+
+                <div class="voter-topbar-user">
+                    <div class="top-voter-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <span id="topbarVoterName">Voter</span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="voter-content">
+
+            <!-- OVERVIEW SECTION -->
+            <section class="voter-section" id="overview">
+
+                <div class="voter-welcome">
+
+                    <div>
+                        <span class="voter-welcome-label">
+                            VOTER PORTAL
+                        </span>
+
+                        <h1>
+                            Welcome, <span id="welcomeVoterName">Voter</span>!
+                        </h1>
+
+                        <p>
+                            Your voice matters. Stay informed and participate
+                            in the democratic process.
+                        </p>
+
+                        <div class="voter-id-display">
+                            <i class="fa-solid fa-id-card"></i>
+                            Voter ID:
+                            <strong id="welcomeVoterId">Not available</strong>
+                        </div>
+                    </div>
+
+                    <div class="voter-welcome-icon">
+                        <i class="fa-solid fa-person-booth"></i>
+                    </div>
+
+                </div>
+
+                <!-- STATUS CARDS -->
+                <div class="voter-stats-grid">
+
+                    <div class="voter-stat-card">
+                        <div class="voter-stat-icon blue-stat">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+
+                       
+<section id="elections" class="voter-section hidden-section">
+
+    <div class="section-heading">
+        <div>
+            <h2>Available Elections</h2>
+            <p>View elections currently available for voting.</p>
+        </div>
+    </div>
+
+    <div id="voterElectionList" class="voter-election-grid">
+        <p>Loading elections...</p>
+    </div>
+
+</section>
+
+                    </div>
+
+                    <div class="voter-stat-card">
+                        <div class="voter-stat-icon green-stat">
+                            <i class="fa-solid fa-check-circle"></i>
+                        </div>
+
+                        <div>
+                            <p>Votes Submitted</p>
+                            <h2 id="votesSubmittedCount">0</h2>
+                            <small>Your voting activity</small>
+                        </div>
+                    </div>
+
+                    <div class="voter-stat-card">
+                        <div class="voter-stat-icon purple-stat">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+
+                        <div>
+                            <p>Account Status</p>
+                            <h2 id="accountStatus">Active</h2>
+                            <small>Your account condition</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DASHBOARD PANELS -->
+                <div class="voter-dashboard-grid">
+
+                    <div class="voter-panel">
+
+                        <div class="voter-panel-heading">
+                            <div>
+                                <h3>Election Overview</h3>
+                                <p>Your available election activities</p>
+                            </div>
+
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+
+                        <div class="voter-empty-state">
+                            <div class="empty-icon">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+
+                            <h3>No Elections Available</h3>
+
+                            <p>
+                                Elections will appear here when the
+                                administrator creates them.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="voter-panel">
+
+                        <div class="voter-panel-heading">
+                            <div>
+                                <h3>My Account</h3>
+                                <p>Your registered account details</p>
+                            </div>
+
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+
+                        <div class="account-summary">
+
+                            <div class="summary-row">
+                                <span>Full Name</span>
+                                <strong id="summaryName">-</strong>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Email Address</span>
+                                <strong id="summaryEmail">-</strong>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Mobile Number</span>
+                                <strong id="summaryMobile">-</strong>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Account Status</span>
+                                <strong class="active-text" id="summaryStatus">
+                                    Active
+                                </strong>
+                            </div>
+
+                            <button type="button"
+                                    class="view-profile-button"
+                                    data-go="profile">
+                                View My Profile
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="voter-notice">
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <div>
+                        <strong>Important Information</strong>
+                        <p>
+                            Never share your login password with anyone.
+                            Check your account before participating in an election.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ELECTIONS SECTION -->
+            <section class="voter-section hidden-voter-section"
+                     id="elections">
+
+                <div class="voter-section-heading">
+                    <h1>Available Elections</h1>
+                    <p>View elections published by the administrator.</p>
+                </div>
+
+                <div class="voter-panel voter-empty-page">
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+
+                    <h2>No Elections Available</h2>
+
+                    <p>
+                        The election management module will be connected
+                        in Phase 6 and the voting system in Phase 7.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- HISTORY SECTION -->
+            <section class="voter-section hidden-voter-section"
+                     id="history">
+
+                <div class="voter-section-heading">
+                    <h1>Voting History</h1>
+                    <p>Review your submitted votes.</p>
+                </div>
+
+                <div class="voter-panel">
+
+                    <div class="voter-empty-state">
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+
+                        <h3>No Voting History</h3>
+
+                        <p>
+                            Your voting history will appear here
+                            after the voting module is completed.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PROFILE SECTION -->
+            <section class="voter-section hidden-voter-section"
+                     id="profile">
+
+                <div class="voter-section-heading">
+                    <h1>My Profile</h1>
+                    <p>View your registered account information.</p>
+                </div>
+
+                <div class="voter-profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div class="large-voter-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h2 id="profileName">Voter Name</h2>
+                            <p>Registered Voter</p>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-details-grid">
+
+                        <div class="profile-detail">
+                            <span>Voter ID</span>
+                            <strong id="profileVoterId">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Full Name</span>
+                            <strong id="profileFullName">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Email Address</span>
+                            <strong id="profileEmail">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Mobile Number</span>
+                            <strong id="profileMobile">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Registration Date</span>
+                            <strong id="profileCreatedAt">-</strong>
+                        </div>
+
+                        <div class="profile-detail">
+                            <span>Account Status</span>
+                            <strong id="profileStatus" class="active-text">
+                                Active
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <p class="profile-note">
+                        <i class="fa-solid fa-lock"></i>
+                        Your account information is displayed in read-only mode.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <footer class="voter-footer">
+                <p>© 2026 SmartVote. Voter Portal.</p>
+                <span>Frontend Demo Project</span>
+            </footer>
+
+        </div>
+
+    </main>
+
+    <div class="voter-toast" id="voterToast"></div>
+
+    <script src="auth.js"></script>
+    <script src="voter.js"></script>
+    <script src="voter-elections.js"></script>
+</body>
+</html>

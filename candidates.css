@@ -1,0 +1,199 @@
+
+.candidate-form-card,
+.candidate-list-card {
+    margin-bottom: 22px;
+}
+
+.candidate-heading-icon {
+    color: #477fe0;
+    font-size: 23px;
+}
+
+.candidate-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.candidate-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.candidate-field label {
+    color: #42516c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.candidate-field input,
+.candidate-field select,
+.candidate-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 13px;
+    border: 1px solid #e1e7f0;
+    border-radius: 8px;
+    outline: none;
+    color: #35435e;
+    background: #fff;
+    font: inherit;
+    font-size: 12px;
+}
+
+.candidate-field input:focus,
+.candidate-field select:focus,
+.candidate-field textarea:focus {
+    border-color: #4785e8;
+    box-shadow: 0 0 0 3px rgba(71,133,232,.1);
+}
+
+.candidate-field input[type="file"] {
+    padding: 9px;
+}
+
+.candidate-field small {
+    color: #929db0;
+    font-size: 10px;
+}
+
+.candidate-field textarea {
+    resize: vertical;
+}
+
+.full-field {
+    grid-column: 1 / -1;
+}
+
+.candidate-form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.candidate-save-btn,
+.candidate-cancel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 17px;
+    border: 0;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.candidate-save-btn {
+    color: white;
+    background: linear-gradient(100deg, #276de4, #6652dc);
+}
+
+.candidate-save-btn:hover {
+    filter: brightness(.95);
+}
+
+.candidate-cancel-btn {
+    color: #53617a;
+    background: #edf0f6;
+}
+
+.candidate-form-message {
+    min-height: 15px;
+    margin: 12px 0 0;
+    font-size: 11px;
+}
+
+.candidate-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.candidate-photo {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    color: #397be4;
+    background: #edf4ff;
+    font-size: 14px;
+}
+
+.candidate-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.candidate-person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.candidate-person strong {
+    display: block;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #263550;
+    font-size: 11px;
+}
+
+.candidate-person small {
+    display: block;
+    margin-top: 4px;
+    color: #929db0;
+    font-size: 10px;
+}
+
+.candidate-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.candidate-edit-btn {
+    color: #3479e6;
+    background: #edf4ff;
+}
+
+.candidate-delete-btn {
+    color: #d34c4c;
+    background: #ffeded;
+}
+
+@media (max-width: 760px) {
+    .candidate-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .candidate-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-field {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .candidate-form-actions {
+        flex-direction: column;
+    }
+
+    .candidate-save-btn,
+    .candidate-cancel-btn {
+        width: 100%;
+    }
+}

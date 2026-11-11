@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SmartVote</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="candidates.css">
+<link rel="stylesheet" href="elections.css">
+<link rel="stylesheet" href="results.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="admin-page">
+
+    <aside class="admin-sidebar" id="adminSidebar">
+        <a href="index.html" class="admin-brand">
+            <span class="brand-icon"><i class="fa-solid fa-check-to-slot"></i></span>
+            <span>Smart<span>Vote</span></span>
+        </a>
+
+        <div class="admin-profile">
+            <div class="admin-avatar"><i class="fa-solid fa-user-shield"></i></div>
+            <div>
+                <strong id="sidebarAdminName">Administrator</strong>
+                <small>System Admin</small>
+            </div>
+        </div>
+
+        <p class="sidebar-heading">MAIN MENU</p>
+
+        <nav class="admin-nav">
+            <a href="#overview" class="active" data-section="overview">
+                <i class="fa-solid fa-chart-pie"></i> Dashboard
+            </a>
+            <a href="#voters" data-section="voters">
+                <i class="fa-solid fa-users"></i> Manage Voters
+            </a>
+            <a href="#candidates" data-section="candidates">
+                <i class="fa-solid fa-user-tie"></i> Candidates
+                <span class="coming-soon">Soon</span>
+            </a>
+            <a href="#elections" data-section="elections">
+                <i class="fa-solid fa-landmark"></i> Elections
+                <span class="coming-soon">Soon</span>
+            </a>
+            <a href="#results" data-section="results">
+                <i class="fa-solid fa-square-poll-vertical"></i> Results
+                <span class="coming-soon">Soon</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html"><i class="fa-solid fa-house"></i> View Website</a>
+            <button type="button" id="adminLogout">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <h2>Admin Dashboard</h2>
+                    <p>Manage your SmartVote platform</p>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <span class="admin-date" id="adminDate"></span>
+                <div class="topbar-user">
+                    <div class="small-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                    <span id="topbarAdminName">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-content">
+
+            <!-- OVERVIEW -->
+            <section id="overview" class="admin-section">
+                <div class="welcome-banner">
+                    <div>
+                        <span class="welcome-label">ADMINISTRATION</span>
+                        <h1>Welcome back, <span id="welcomeAdminName">Admin</span>!</h1>
+                        <p>Here is what's happening on your voting platform.</p>
+                    </div>
+                    <div class="welcome-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <p>Total Voters</p>
+                            <h2 id="statVoters">0</h2>
+                            <small>Registered accounts</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fa-solid fa-user-tie"></i></div>
+                        <div>
+                            <p>Total Candidates</p>
+                            <h2 id="statCandidates">0</h2>
+                            <small>Available candidates</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon teal"><i class="fa-solid fa-landmark"></i></div>
+                        <div>
+                            <p>Total Elections</p>
+                            <h2 id="statElections">0</h2>
+                            <small>Created elections</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="fa-solid fa-check-to-slot"></i></div>
+                        <div>
+                            <p>Total Votes</p>
+                            <h2 id="statVotes">0</h2>
+                            <small>Votes submitted</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-panels">
+                    <div class="panel-card">
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Recent Voter Registrations</h3>
+                                <p>Latest registered accounts</p>
+                            </div>
+                            <button class="text-button" type="button" data-go="voters">View All</button>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Voter</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentVotersBody">
+                                    <tr><td colspan="3" class="empty-row">No registered voters yet.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel-card quick-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Manage your platform</p>
+                            </div>
+                        </div>
+                        <button class="quick-action" type="button" data-go="voters">
+                            <span class="quick-icon"><i class="fa-solid fa-users"></i></span>
+                            <span><strong>Manage Voters</strong><small>View and manage voter accounts</small></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <div class="quick-action disabled-action">
+                            <span class="quick-icon"><i class="fa-solid fa-user-plus"></i></span>
+                            <span><strong>Manage Candidates</strong><small>Available in Phase 5</small></span>
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div class="quick-action disabled-action">
+                            <span class="quick-icon"><i class="fa-solid fa-landmark"></i></span>
+                            <span><strong>Manage Elections</strong><small>Available in Phase 6</small></span>
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VOTER MANAGEMENT -->
+            <section id="voters" class="admin-section hidden-section">
+                <div class="section-title-row">
+                    <div>
+                        <h1>Manage Voters</h1>
+                        <p>View, search, activate, block or remove registered voters.</p>
+                    </div>
+                    <span class="total-label">Total: <strong id="voterCount">0</strong></span>
+                </div>
+
+                <div class="panel-card voter-management-card">
+                    <div class="voter-toolbar">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" id="voterSearch"
+                                   placeholder="Search by name, email or mobile...">
+                        </div>
+                        <select id="statusFilter" class="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="blocked">Blocked</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table voter-table">
+                            <thead>
+                                <tr>
+                                    <th>Voter ID</th>
+                                    <th>Voter Details</th>
+                                    <th>Mobile</th>
+                                    <th>Registered On</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="votersTableBody">
+                                <tr><td colspan="6" class="empty-row">Loading voters...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="table-note" id="voterTableNote">Showing registered voters.</p>
+                </div>
+            </section>
+
+            <!-- FUTURE MODULES -->
+           
+<section id="candidates" class="admin-section hidden-section">
+
+    <div class="section-title-row">
+        <div>
+            <h1>Candidate Management</h1>
+            <p>Add, update, search and manage election candidates.</p>
+        </div>
+
+        <span class="total-label">
+            Total Candidates:
+            <strong id="candidateCount">0</strong>
+        </span>
+    </div>
+
+    <!-- ADD / EDIT CANDIDATE FORM -->
+    <div class="panel-card candidate-form-card">
+
+        <div class="panel-heading">
+            <div>
+                <h3 id="candidateFormTitle">Add New Candidate</h3>
+                <p>Enter candidate information below.</p>
+            </div>
+
+            <i class="fa-solid fa-user-plus candidate-heading-icon"></i>
+        </div>
+
+        <form id="candidateForm">
+
+            <input type="hidden" id="candidateId">
+
+            <div class="candidate-form-grid">
+
+                <div class="candidate-field">
+                    <label for="candidateName">Candidate Name *</label>
+                    <input
+                        type="text"
+                        id="candidateName"
+                        placeholder="Enter full name"
+                        maxlength="60"
+                        required>
+                </div>
+
+                <div class="candidate-field">
+                    <label for="candidateParty">Political Party *</label>
+                    <input
+                        type="text"
+                        id="candidateParty"
+                        placeholder="Enter party name"
+                        maxlength="60"
+                        required>
+                </div>
+
+                <div class="candidate-field">
+                    <label for="candidatePosition">Election Position *</label>
+                    <select id="candidatePosition" required>
+                        <option value="">Select position</option>
+                        <option value="President">President</option>
+                        <option value="Vice President">Vice President</option>
+                        <option value="Secretary">Secretary</option>
+                        <option value="Member">Member</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="candidate-field">
+                    <label for="candidateConstituency">Constituency *</label>
+                    <input
+                        type="text"
+                        id="candidateConstituency"
+                        placeholder="Enter constituency"
+                        maxlength="80"
+                        required>
+                </div>
+
+                <div class="candidate-field">
+                    <label for="candidateStatus">Candidate Status</label>
+                    <select id="candidateStatus">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+
+                <div class="candidate-field">
+                    <label for="candidatePhoto">Candidate Photo</label>
+                    <input
+                        type="file"
+                        id="candidatePhoto"
+                        accept="image/png,image/jpeg,image/webp">
+                    <small>JPG, PNG or WEBP. Maximum 500 KB.</small>
+                </div>
+
+                <div class="candidate-field full-field">
+                    <label for="candidateDescription">Candidate Description</label>
+                    <textarea
+                        id="candidateDescription"
+                        rows="3"
+                        maxlength="300"
+                        placeholder="Enter candidate introduction..."></textarea>
+                </div>
+
+            </div>
+
+            <div class="candidate-form-actions">
+
+                <button type="submit" class="candidate-save-btn" id="saveCandidateBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Candidate
+                </button>
+
+                <button type="button" class="candidate-cancel-btn"
+                        id="cancelCandidateEdit" hidden>
+                    Cancel Edit
+                </button>
+
+            </div>
+
+            <p class="candidate-form-message" id="candidateFormMessage"></p>
+
+        </form>
+
+    </div>
+
+    <!-- CANDIDATE LIST -->
+    <div class="panel-card candidate-list-card">
+
+        <div class="panel-heading">
+            <div>
+                <h3>All Candidates</h3>
+                <p>Manage your registered candidates.</p>
+            </div>
+        </div>
+
+        <div class="candidate-toolbar">
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="search"
+                    id="candidateSearch"
+                    placeholder="Search candidate, party or constituency...">
+            </div>
+
+            <select id="candidateStatusFilter" class="status-filter">
+                <option value="all">All Status</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="admin-table candidate-table">
+
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Party</th>
+                        <th>Position</th>
+                        <th>Constituency</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="candidateTableBody">
+                    <tr>
+                        <td colspan="6" class="empty-row">
+                            No candidates available.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <p class="table-note" id="candidateTableNote">
+            Candidate records are stored in your browser.
+        </p>
+
+    </div>
+
+</section>
+
+
+           
+<section id="elections" class="admin-section hidden-section">
+
+    <div class="section-heading">
+        <div>
+            <h2>Election Management</h2>
+            <p>Create and manage your voting elections.</p>
+        </div>
+    </div>
+
+    <div class="candidate-form-card">
+        <div class="candidate-card-heading">
+            <h3 id="electionFormTitle">Create New Election</h3>
+            <p>Enter election details and select candidates.</p>
+        </div>
+
+        <form id="electionForm">
+
+            <input type="hidden" id="electionId">
+
+            <div class="election-form-grid">
+
+                <div class="candidate-field">
+                    <label for="electionTitle">Election Title *</label>
+                    <input type="text" id="electionTitle"
+                           placeholder="Example: Student Council Election"
+                           required maxlength="100">
+                </div>
+
+                <div class="candidate-field">
+                    <label for="electionType">Election Type *</label>
+                    <select id="electionType" required>
+                        <option value="">Select type</option>
+                        <option value="College">College Election</option>
+                        <option value="Organization">Organization Election</option>
+                        <option value="General">General Election</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="candidate-field">
+                    <label for="electionStart">Start Date *</label>
+                    <input type="datetime-local" id="electionStart" required>
+                </div>
+
+                <div class="candidate-field">
+                    <label for="electionEnd">End Date *</label>
+                    <input type="datetime-local" id="electionEnd" required>
+                </div>
+
+                <div class="candidate-field">
+                    <label for="electionLocation">Location *</label>
+                    <input type="text" id="electionLocation"
+                           placeholder="Example: Bhubaneswar"
+                           required maxlength="100">
+                </div>
+
+                <div class="candidate-field">
+                    <label for="electionStatus">Election Status *</label>
+                    <select id="electionStatus" required>
+                        <option value="draft">Draft</option>
+                        <option value="active">Active</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <div class="candidate-field full-width">
+                    <label for="electionDescription">Description</label>
+                    <textarea id="electionDescription"
+                              rows="3"
+                              placeholder="Enter election information..."
+                              maxlength="500"></textarea>
+                </div>
+
+            </div>
+
+            <div class="election-candidate-selection">
+                <h4>Select Candidates *</h4>
+                <p>Choose the candidates participating in this election.</p>
+                <div id="electionCandidateOptions"
+                     class="election-candidate-options">
+                    <p>No active candidates available.</p>
+                </div>
+            </div>
+
+            <div id="electionFormMessage"
+                 class="candidate-form-message"></div>
+
+            <div class="election-form-actions">
+                <button type="submit" class="candidate-save-btn"
+                        id="saveElectionBtn">
+                    <i class="fa-solid fa-plus"></i> Create Election
+                </button>
+
+                <button type="button" class="candidate-cancel-btn hidden-section"
+                        id="cancelElectionEdit">
+                    Cancel Edit
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="candidate-list-card election-list-card">
+        <div class="candidate-card-heading">
+            <h3>All Elections</h3>
+            <p>View, edit, and manage created elections.</p>
+        </div>
+
+        <div class="candidate-toolbar">
+            <input type="search" id="electionSearch"
+                   placeholder="Search elections...">
+
+            <select id="electionStatusFilter">
+                <option value="all">All Elections</option>
+                <option value="draft">Draft</option>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+
+        <div class="table-responsive">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Election</th>
+                        <th>Type</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Candidates</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="electionTableBody"></tbody>
+            </table>
+        </div>
+
+        <p id="electionTableNote" class="table-note"></p>
+    </div>
+
+</section>
+
+
+            
+<section id="results" class="admin-section hidden-section">
+
+    <div class="section-heading">
+        <div>
+            <h2>Election Results & Analytics</h2>
+            <p>View candidate-wise votes, percentages, and election winners.</p>
+        </div>
+    </div>
+
+    <div class="results-filter-card">
+        <label for="resultElectionSelect">Select Election</label>
+
+        <select id="resultElectionSelect">
+            <option value="">Select an election</option>
+        </select>
+
+        <button type="button" id="refreshResultsBtn">
+            <i class="fa-solid fa-rotate"></i> Refresh Results
+        </button>
+    </div>
+
+    <div id="resultsEmpty" class="results-empty">
+        <i class="fa-solid fa-chart-column"></i>
+        <h3>Select an Election</h3>
+        <p>Select an election above to view its results.</p>
+    </div>
+
+    <div id="resultsContent" class="hidden-section">
+
+        <div class="results-election-heading">
+            <div>
+                <span class="results-eyebrow">ELECTION REPORT</span>
+                <h3 id="resultElectionTitle">Election Name</h3>
+                <p id="resultElectionDetails"></p>
+            </div>
+
+            <span id="resultElectionStatus" class="election-status">
+                Status
+            </span>
+        </div>
+
+        <div class="results-summary-grid">
+
+            <div class="results-summary-card">
+                <div class="results-summary-icon purple">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div>
+                    <span>Total Registered Voters</span>
+                    <h3 id="resultTotalVoters">0</h3>
+                </div>
+            </div>
+
+            <div class="results-summary-card">
+                <div class="results-summary-icon blue">
+                    <i class="fa-solid fa-check-to-slot"></i>
+                </div>
+                <div>
+                    <span>Total Votes Submitted</span>
+                    <h3 id="resultTotalVotes">0</h3>
+                </div>
+            </div>
+
+            <div class="results-summary-card">
+                <div class="results-summary-icon green">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <div>
+                    <span>Voter Turnout</span>
+                    <h3 id="resultTurnout">0%</h3>
+                </div>
+            </div>
+
+            <div class="results-summary-card">
+                <div class="results-summary-icon orange">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div>
+                    <span>Participating Candidates</span>
+                    <h3 id="resultCandidateCount">0</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="results-winner-card" id="resultsWinnerCard">
+            <div class="winner-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <div>
+                <span>WINNER</span>
+                <h3 id="resultWinnerName">Winner Name</h3>
+                <p id="resultWinnerDetails"></p>
+            </div>
+        </div>
+
+        <div class="results-panel">
+            <div class="results-panel-heading">
+                <div>
+                    <h3>Candidate Vote Analysis</h3>
+                    <p>Vote distribution for each participating candidate.</p>
+                </div>
+            </div>
+
+            <div id="candidateResultChart" class="candidate-result-chart"></div>
+        </div>
+
+        <div class="results-panel">
+            <div class="results-panel-heading">
+                <div>
+                    <h3>Detailed Result Table</h3>
+                    <p>Candidate-wise vote count and percentage.</p>
+                </div>
+            </div>
+               <button type="button" id="downloadResultPDF"
+            class="download-report-btn">
+        <i class="fa-solid fa-file-pdf"></i>
+        Download PDF Report
+    </button>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Candidate</th>
+                            <th>Party</th>
+                            <th>Total Votes</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="resultTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <p class="results-disclaimer">
+            <i class="fa-solid fa-circle-info"></i>
+            Results are calculated from votes stored in this browser.
+            They are demonstration data, not independently verified election results.
+        </p>
+
+    </div>
+
+</section>
+
+
+            <footer class="admin-footer">
+                <p>© 2026 SmartVote. Admin Control Panel.</p>
+                <span>Frontend Demo Project</span>
+            </footer>
+        </div>
+    </main>
+
+    <div class="admin-toast" id="adminToast"></div>
+
+<script src="auth.js"></script>
+<script src="admin.js"></script>
+<script src="candidates.js"></script>
+<script src="elections.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script src="results.js"></script>
+</body>
+</html>

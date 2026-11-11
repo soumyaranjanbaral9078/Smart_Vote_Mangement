@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | SmartVote</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <section class="auth-brand-panel">
+
+        <div class="auth-brand">
+
+            <div class="auth-brand-icon">
+                <i class="fa-solid fa-check-to-slot"></i>
+            </div>
+
+            <div class="auth-brand-name">
+                Smart<span>Vote</span>
+            </div>
+
+        </div>
+
+
+        <div class="auth-brand-content">
+
+            <span class="tagline">JOIN SMARTVOTE TODAY</span>
+
+            <h1>
+                Your Voice Matters.
+                <span>Be Part of Change.</span>
+            </h1>
+
+            <p>
+                Create your account and explore the SmartVote
+                demonstration election platform.
+            </p>
+
+            <div class="auth-benefits">
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Simple voter registration
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Easy election access
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Personal voter dashboard
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="auth-brand-footer">
+            © 2026 SmartVote | Educational Demo
+        </div>
+
+    </section>
+
+
+    <section class="auth-form-panel">
+
+        <div class="auth-form-container">
+
+            <a href="index.html" class="auth-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Homepage
+            </a>
+
+
+            <div class="auth-form-header">
+
+                <h2>Create Your Account</h2>
+
+                <p>
+                    Register as a voter to access the SmartVote platform.
+                </p>
+
+            </div>
+
+
+            <div id="authMessage" class="auth-message"></div>
+
+
+            <form id="registerForm" class="auth-form">
+
+                <div class="form-group">
+
+                    <label for="fullName">Full Name</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input type="text"
+                               id="fullName"
+                               class="form-control"
+                               placeholder="Enter your full name"
+                               maxlength="60"
+                               autocomplete="name"
+                               required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input type="email"
+                               id="email"
+                               class="form-control"
+                               placeholder="Enter your email"
+                               maxlength="100"
+                               autocomplete="email"
+                               required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="mobile">Mobile Number</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input type="tel"
+                               id="mobile"
+                               class="form-control"
+                               placeholder="10-digit mobile number"
+                               maxlength="10"
+                               inputmode="numeric"
+                               autocomplete="tel"
+                               required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">Password</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input type="password"
+                               id="password"
+                               class="form-control"
+                               placeholder="Create a password"
+                               minlength="8"
+                               autocomplete="new-password"
+                               required>
+
+                        <button type="button"
+                                class="password-toggle"
+                                data-toggle="password"
+                                aria-label="Show password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input type="password"
+                               id="confirmPassword"
+                               class="form-control"
+                               placeholder="Confirm your password"
+                               minlength="8"
+                               autocomplete="new-password"
+                               required>
+
+                        <button type="button"
+                                class="password-toggle"
+                                data-toggle="confirmPassword"
+                                aria-label="Show confirm password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <label class="remember-option">
+
+                    <input type="checkbox" id="terms" required>
+
+                    I agree to the demonstration project terms.
+
+                </label>
+
+
+                <button type="submit" class="auth-submit">
+                    Create Account
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+
+            <div class="auth-switch">
+
+                Already have an account?
+
+                <a href="login.html">Login Here</a>
+
+            </div>
+
+
+            <div class="auth-terms">
+
+                This is an educational frontend demonstration.
+                Registration does not establish real-world voter eligibility.
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="auth.js"></script>
+
+</body>
+</html>

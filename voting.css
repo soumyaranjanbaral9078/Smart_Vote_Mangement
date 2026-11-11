@@ -1,0 +1,413 @@
+
+/* SMARTVOTE VOTING PAGE */
+
+.voting-page {
+    min-height: 100vh;
+    background: #f5f7fc;
+    color: #172033;
+    font-family: 'Inter', sans-serif;
+}
+
+.voting-topbar {
+    height: 75px;
+    padding: 0 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.voting-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #172554;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.voting-brand i {
+    color: #4f46e5;
+    font-size: 26px;
+}
+
+.voting-brand span span {
+    color: #6366f1;
+}
+
+.back-dashboard-link {
+    text-decoration: none;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.back-dashboard-link:hover {
+    color: #4f46e5;
+}
+
+.voting-main {
+    max-width: 1050px;
+    width: 92%;
+    margin: 45px auto;
+}
+
+.voting-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.voting-eyebrow {
+    color: #6366f1;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.voting-heading h1 {
+    margin: 10px 0;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.voting-heading p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.voting-election-card,
+.voting-candidate-section {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 17px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+.voting-election-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.voting-label {
+    color: #6366f1;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.voting-election-header h2 {
+    margin: 8px 0;
+    font-size: 23px;
+}
+
+.voting-election-card > p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.voting-election-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.voting-election-info > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.voting-election-info > div > i {
+    color: #6366f1;
+    font-size: 19px;
+}
+
+.voting-election-info span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.voting-election-info small {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.voting-election-info strong {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.voting-section-heading {
+    margin-bottom: 20px;
+}
+
+.voting-section-heading h2 {
+    margin: 0 0 7px;
+    font-size: 20px;
+}
+
+.voting-section-heading p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.voting-candidate-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.voting-candidate-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    border: 2px solid #e5e7eb;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.voting-candidate-option:hover {
+    border-color: #818cf8;
+    background: #f8faff;
+}
+
+.voting-candidate-option.selected {
+    border-color: #4f46e5;
+    background: #eef2ff;
+}
+
+.voting-candidate-option input {
+    width: 19px;
+    height: 19px;
+    accent-color: #4f46e5;
+    flex-shrink: 0;
+}
+
+.voting-candidate-photo {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eef2ff;
+}
+
+.voting-candidate-placeholder {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 22px;
+}
+
+.voting-candidate-details {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.voting-candidate-details strong {
+    font-size: 14px;
+}
+
+.voting-candidate-details small {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.voting-submit-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.voting-submit-panel > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.voting-submit-panel > div > i {
+    color: #6366f1;
+    font-size: 22px;
+}
+
+.voting-submit-panel span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.voting-submit-panel strong {
+    font-size: 12px;
+}
+
+.voting-submit-panel small {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.voting-submit-panel button,
+.confirmation-dashboard-btn {
+    padding: 13px 19px;
+    border: none;
+    border-radius: 9px;
+    background: #4f46e5;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.voting-submit-panel button:hover,
+.confirmation-dashboard-btn:hover {
+    background: #4338ca;
+}
+
+.voting-submit-panel button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.voting-message {
+    padding: 13px 16px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.voting-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.vote-confirmation {
+    text-align: center;
+    padding: 35px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 17px;
+}
+
+.confirmation-icon {
+    color: #16a34a;
+    font-size: 55px;
+}
+
+.vote-confirmation h2 {
+    margin: 15px 0 8px;
+}
+
+.vote-confirmation > p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.receipt-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    margin: 25px auto;
+    padding: 18px;
+    border: 1px dashed #a5b4fc;
+    border-radius: 12px;
+    background: #f5f7ff;
+}
+
+.receipt-box span {
+    color: #6366f1;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.receipt-box strong {
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.receipt-box small {
+    color: #64748b;
+}
+
+.voting-footer {
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.voter-election-footer .cast-vote-btn {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.voter-election-footer .cast-vote-btn:hover {
+    background: #4338ca;
+}
+
+.vote-completed-label {
+    color: #15803d;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+    .voting-main {
+        margin: 25px auto;
+    }
+
+    .voting-heading h1 {
+        font-size: 27px;
+    }
+
+    .voting-election-info,
+    .voting-candidate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .voting-submit-panel {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .voting-submit-panel button {
+        width: 100%;
+    }
+
+    .voting-topbar {
+        padding: 0 4%;
+    }
+}

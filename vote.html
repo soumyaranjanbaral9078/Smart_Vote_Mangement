@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cast Your Vote | SmartVote</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="voter.css">
+    <link rel="stylesheet" href="elections.css">
+    <link rel="stylesheet" href="voting.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="voting-page">
+
+    <header class="voting-topbar">
+        <a href="voter-dashboard.html" class="voting-brand">
+            <i class="fa-solid fa-square-check"></i>
+            <span>Smart<span>Vote</span></span>
+        </a>
+
+        <a href="voter-dashboard.html" class="back-dashboard-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Dashboard
+        </a>
+    </header>
+
+    <main class="voting-main">
+
+        <div class="voting-heading">
+            <span class="voting-eyebrow">ONLINE VOTING</span>
+            <h1>Cast Your Vote</h1>
+            <p>Review the candidates carefully before submitting your vote.</p>
+        </div>
+
+        <div id="votingMessage" class="voting-message hidden-section"></div>
+
+        <section class="voting-election-card">
+
+            <div class="voting-election-header">
+                <div>
+                    <span class="voting-label">CURRENT ELECTION</span>
+                    <h2 id="voteElectionTitle">Loading election...</h2>
+                </div>
+
+                <span class="election-status active" id="voteElectionStatus">
+                    Active
+                </span>
+            </div>
+
+            <p id="voteElectionDescription"></p>
+
+            <div class="voting-election-info">
+                <div>
+                    <i class="fa-solid fa-calendar-day"></i>
+                    <span>
+                        <small>Start Date</small>
+                        <strong id="voteStartDate">-</strong>
+                    </span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>
+                        <small>End Date</small>
+                        <strong id="voteEndDate">-</strong>
+                    </span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>
+                        <small>Location</small>
+                        <strong id="voteLocation">-</strong>
+                    </span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="voting-candidate-section">
+
+            <div class="voting-section-heading">
+                <div>
+                    <h2>Select Your Candidate</h2>
+                    <p>Select only one candidate for this election.</p>
+                </div>
+            </div>
+
+            <form id="votingForm">
+
+                <div id="votingCandidateList" class="voting-candidate-grid">
+                    <p>Loading candidates...</p>
+                </div>
+
+                <div class="voting-submit-panel">
+                    <div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>
+                            <strong>Review before submitting</strong>
+                            <small>You cannot change your selection after submission in this demo.</small>
+                        </span>
+                    </div>
+
+                    <button type="submit" id="submitVoteBtn" disabled>
+                        <i class="fa-solid fa-check-to-slot"></i>
+                        Submit My Vote
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <section id="voteConfirmation" class="vote-confirmation hidden-section">
+
+            <div class="confirmation-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h2>Vote Submitted Successfully!</h2>
+
+            <p>Your vote has been recorded for this election.</p>
+
+            <div class="receipt-box">
+                <span>VOTING RECEIPT</span>
+                <strong id="voteReceiptId">-</strong>
+                <small id="voteReceiptDate">-</small>
+            </div>
+
+            <a href="voter-dashboard.html" class="confirmation-dashboard-btn">
+                Return to Dashboard
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer class="voting-footer">
+        <p>© 2026 SmartVote. Educational demonstration project.</p>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="voting.js"></script>
+
+</body>
+</html>
